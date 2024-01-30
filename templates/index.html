@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trading Bot Configuration</title>
+</head>
+<body>
+    <h2>Set Trading Bot Configuration</h2>
+    <form method="POST" action="/set_config">
+        <label for="key">API Key:</label><br>
+        <input type="text" id="key" name="key" required><br>
+        
+        <label for="secret">API Secret:</label><br>
+        <input type="text" id="secret" name="secret" required><br>
+        
+        <label for="sell_time">Sell Time (HH:MM):</label><br>
+        <input type="text" id="sell_time" name="sell_time" required><br>
+        
+        <label for="quantity">Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity" required><br>
+
+        <label for="stop_loss_factor">Stop Loss Factor:</label><br>
+        <input type="number" step="any" id="stop_loss_factor" name="stop_loss_factor" required><br>
+
+        <label for="stop_price_factor">Stop Price Factor:</label><br>
+        <input type="number" step="any" id="stop_price_factor" name="stop_price_factor" required><br>
+        
+        <input type="submit" value="Set Configuration">
+    </form>
+</body>
+</html>
