@@ -26,7 +26,7 @@ STOP_PRICE_FACTOR = float(config['Strategy']['stop_price_factor'])
 # API Configuration
 #API_KEY = config['API']['key']
 #API_SECRET = config['API']['secret']
-BASE_URL = https://api.delta.exchange
+#BASE_URL = https://api.delta.exchange
 
 # Strategy Configuration
 #SELL_TIME = config['Strategy']['sell_time']
@@ -35,7 +35,7 @@ BASE_URL = https://api.delta.exchange
 #STOP_PRICE_FACTOR = float(config['Strategy']['stop_price_factor'])
 
 # ETHUSDT Configuration
-SYMBOL = ETHUSDT
+#SYMBOL = ETHUSDT
 
 def get_time_stamp():
     return str(int(datetime.datetime.utcnow().timestamp()) + 19800)
