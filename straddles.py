@@ -116,6 +116,13 @@ def get_atm_option_ids():
 
     eth_calls = [opt for opt in call_options if SYMBOL.split('USDT')[0] in opt['description']]
     eth_puts = [opt for opt in put_options if SYMBOL.split('USDT')[0] in opt['description']]
+    expiries = list(set([opt['settlement_time'] for opt in eth_calls]))
+    # sory by expiries, format : '2024-02-09T12:00:00Z'
+    expiries.sort()
+    closest_expiry = expiries[0]
+    # filter by closest expiry
+    eth_calls = [opt for opt in eth_calls if opt['settlement_time'] == closest_expiry]
+    eth_puts = [opt for opt in eth_puts if opt['settlement_time'] == closest_expiry]
 
     atm_call = min(eth_calls, key=lambda x: abs(float(x['strike_price']) - eth_price))
     atm_put = min(eth_puts, key=lambda x: abs(float(x['strike_price']) - eth_price))
