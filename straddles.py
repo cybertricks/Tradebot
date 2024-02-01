@@ -159,7 +159,7 @@ def execute_strategy():
     put_stop_loss = put_bid * STOP_LOSS_FACTOR
 
     # Place a sell call
-    call_response = place_bracket_order(side = "sell", qty = QUANTITY, product_id = atm_call_id, stop_loss = call_stop_loss)
+    call_response = place_bracket_order("sell", QUANTITY, atm_call_id, call_stop_loss)
     print("Call option order response:", call_response)
 
     # Place a sell put
